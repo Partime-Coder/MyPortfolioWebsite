@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+* {
+  font-family: Poppins, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.backgroundColor {
+  background: linear-gradient(90deg, rgba(213, 0, 249, 0.1), rgba(255, 23, 68, 0.1) 100%);
+}
+
+.nav ul li {
+  font-weight: 600;
+  color: rgba(14, 77, 164, 1);
+}
+
+.nav ul li:hover {
+  color: rgba(213, 0, 249, 1);
+  cursor: pointer;
+  /* border-bottom: 2px solid rgba(213, 0, 249, 1); */
+
+}
+
+.contactbtn {
+  width: 100px;
+  height: 40px;
+  background-color: rgba(14, 77, 164, 1);
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+}
+
+.contactbtn:hover {
+  background-color: rgba(213, 0, 249, 1);
+  cursor: pointer;
+}
+
+.menu {
+  color: rgba(14, 77, 164, 1);
+}
+
+.name {
+  font-size: 36px;
+  font-weight: 400;
+  color: rgba(14, 77, 164, 1);
+
+
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.Hero-para {
+  font-size: 1.2rem;
+  color: rgba(14, 77, 164, 1);
+}
+
+.Hero-circle-img {
+  width: 80%;
+  height: calc(100% - 60px);
+  height: 100%;
+}
+
+.heroimage {
+  max-width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.heroimage.fade {
+  opacity: 1;
+}
+
+.heroimage.fade-changing {
+  opacity: 0;
+}
+
+.heroimage.fade {
+  opacity: 1;
+}
+
+.heroimage.fade-changing {
+  opacity: 0;
+}
+
+.bigcricle {
+
+  min-width: 400px;
+  min-height: 400px;
+  border-radius: 50%;
+  position: absolute;
+  background: linear-gradient(90.00deg, rgb(214, 166, 223), rgb(221, 127, 146) 100%);
+  z-index: -100;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+}
+
+.header {
+  opacity: 0;
+  transform: translateY(-60px);
+  animation: headslidein 1s ease-out forwards;
+}
+
+.Hero-Left {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slideleft 0.8s ease-out forwards;
+}
+
+.Hero-Right {
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideright 0.8s ease-out forwards;
+}
+
+@keyframes slideleft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideright {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes headslidein {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.skill-color {
+  color: rgba(213, 0, 249, 1);
+}
+
+.Blue-Color {
+  color: rgba(14, 77, 164, 1);
+}
+
+.card-anim {
+  opacity: 0;
+  transform: translate(-40px, 40px) scale(0.8);
+  animation: fadeDesktop 0.8s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0%;
+}
+
+.E-Card {
+  transform: translateY(40px);
+  animation: fadeMobile 0.8s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0%;
+}
+
+@keyframes fadeDesktop {
+  from {
+    opacity: 0;
+    transform: translate(-40px, 40px) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Mobile animation */
+@keyframes fadeMobile {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Left side (About): fade from left */
+.about-anim {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: fadeLeft 0.8s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Right side (Education): fade from right */
+.edu-anim {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: fadeRight 0.8s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+.project-anim {
+    transform: translateY(40px);
+    animation: fadeUp 0.10s ease-out both;
+     animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  }
+
+@media screen and (max-width: 1024px) {
+
+  .Hero-Left,
+  .Hero-Right {
+    transform: translateY(60px);
+    /* come from bottom */
+    animation: slideup 0.8s ease-out forwards;
+  }
+}
+
+@keyframes slideup {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .name {
+    font-size: 24px;
+  }
+
+  .Hero-para {
+    font-size: 1rem
+  }
+
+  .bigcricle {
+
+    min-width: 300px;
+    min-height: 300px;
+
+  }
+
+  .card-anim {
+    transform: translateY(40px);
+    /* no scale, just bottom */
+    animation: fadeMobile 0.8s ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0%;
+  }
+
+  .about-anim,
+  .edu-anim {
+    transform: translateY(40px);
+    animation: fadeUp 0.10s ease-out both;
+     animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
